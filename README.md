@@ -39,7 +39,8 @@
 
 
 # How to run the application
-	* As I dont use any external module other than django there are no other requirements
-	* Go into the main directory with terminal or cmd and start the project. "python manage.py runserver"
-
-### Since i don't use any external packages other than django, I don't include requirements.txt file.
+	* Install all the requirements from requirements.txt
+	* In CMD or terminal run these commands. 
+		1. python manage.py makemigrations imagesite
+		2. python manage.py migrate
+		3. python manage.py runserver
