@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+ Following
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/following.css' %}">
+{% endblock %}
+
+{% block body %}
+<button class="posted">Latest post from your followed users.</button>
+{% for post in following_post %}
+<div class="post-container">
+	<div class="user-details">
+		<img src="/static/images/profile_images/{{post.upload_by.profile_image_name}}">
+		<div class="name-role">
+			<p class="user-name">{{post.upload_by.username}}</p>
+			<p class="role">{{post.upload_by.user_role}}</p>
+		</div>	
+	</div>
+
+	<div class="user-image">
+		<button class="posted-date">Posted on: {{post.upload_date}}</button>
+		<img src="/static/images/uploads/{{post.main_image_name}}">
+	</div>
+	<div class="image-buttons">
+		<a href="/view_image/{{post.id}}">View</a>
+	</div>
+</div>
+{% endfor %}
+{% if not following_post %}
+	<h1 align="center">No post found!</h1>
+{% endif %}
+
+{% endblock %}

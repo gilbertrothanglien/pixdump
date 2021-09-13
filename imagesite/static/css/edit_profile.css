@@ -1,0 +1,80 @@
+body{
+	background: #031323;
+}
+
+.container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+.container .form-content{
+	border-radius: 25px;
+	background: rgba(255, 255, 255, 0.3);
+	height: auto;
+	width: 500px;
+}
+
+.container .form-content .input-style{
+	padding: 30px 20px;
+}
+
+.container .form-content .input-style input{
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	padding: 10px 5px;
+	color: white;
+}
+.container .form-content .input-style input:focus{
+	outline: none;
+	border-radius: 7px;
+	border: 1px solid lightgreen;
+}
+
+.container .form-content .input-style textarea{
+	height: 100px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: white;
+
+}
+.container .form-content .input-style textarea:focus{
+	outline: none;
+	border: 1px solid lightgreen;
+}
+.button-wrap {
+  position: relative;
+}
+
+.new-button {
+    display: inline-block;
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #9c27b0;
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+}
+.button-wrap #upload{
+	width: 0px;
+	height: 0px;
+	padding-bottom: 30px;
+	border: 0;
+}
+
+#submit{
+	border: 1px solid #09b000;
+	border-radius: 5px;
+	font-weight: bold;
+}
+#submit:hover{
+	background: #0d9106;
+	cursor: pointer;
+}

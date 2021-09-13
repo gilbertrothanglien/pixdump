@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+  PixDump
+{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="content-landing">
+  <img id="main_image" src="https://images.unsplash.com/photo-1613414824045-8af2d5730be2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1367&q=80" alt="">
+  <h3>Good Life</h3>
+  <p>Your one stop place for free pictures. Powered by creative artists</p>
+</div>
+<div id="main-content">
+  <div class="notification-content">
+    {% if not user.is_authenticated %}
+      <h3 align="center" class="notification notification-green">Please login or register an account.</h3>
+    {% endif %}
+  </div>
+  <h1></h1>
+  
+  <hr>
+  <hr>
+  <button class="post-text">Latest Post</button>
+
+</div>
+{% endblock %}

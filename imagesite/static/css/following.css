@@ -1,0 +1,80 @@
+h1 {
+	color: green;
+}
+
+.post-container{
+	padding: 20px 30px;
+	margin: 20px 20px;
+	background-color: #9aa5ad;
+	border-radius: 20px;
+	box-shadow: -2px 3px 31px -5px rgba(0,0,0,0.75);
+-webkit-box-shadow: -2px 3px 31px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px 3px 31px -5px rgba(0,0,0,0.75);
+}
+
+.user-details{
+	display: flex;
+}
+
+.user-details img{
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.user-details .name-role .user-name{
+	font-weight: bold;
+}
+
+.user-details .name-role {
+	display: block;
+}
+
+.user-image{
+	margin: 10px 0;
+}
+
+.user-image img{
+	max-height: 220px;
+	max-width: 380px;
+	object-fit: cover;
+	margin: 20px 50px;
+	display: block;
+	box-shadow: -2px 3px 31px 9px rgba(0,0,0,0.75);
+	-webkit-box-shadow: -2px 3px 31px 9px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 3px 31px 9px rgba(0,0,0,0.75);
+}
+
+.user-image .posted-date{
+	padding: 0 10px;
+	background-color: green;
+	background-size: 100%;
+	border-radius: 20px;
+	border: none;
+}
+
+.image-buttons{
+	padding: 10px 20px;
+}
+
+.image-buttons a{
+	text-decoration: none;
+	color: black;
+	padding: 5px 10px;
+	border-radius: 20px;
+	border: 1px solid #05b04f;
+}
+.image-buttons a:hover{
+	background: #05b04f;
+}
+.posted{
+	padding: 0 10px;
+	background-color: #9003fc;
+	background-size: 100%;
+	border-radius: 5px;
+	border: none;
+	font-size: 20px;
+	margin: 0 20px;
+}

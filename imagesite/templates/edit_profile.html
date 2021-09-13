@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+	Settings
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/edit_profile.css' %}">
+	<script type="text/javascript" src="{% static 'js/edit_profile.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<form class="form-content" action="{% url 'edit_profile' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="input-style">
+			<h1>Edit Profile</h1>
+			<input type="text" name="first_name" placeholder="First name">
+			<input type="text" name="last_name" placeholder="Second name">
+			<input type="text" name="user_occupation" placeholder="Occupation">
+			<input type="hidden" name="profile_picture_name" id="profile_picture_name">
+			<div class="button-wrap">
+				<label class ="new-button" for="upload" id="upload-text"><i class="bx bx-upload"></i>  Upload Profile Picture</label>
+				<input id="upload" type="file" accept="Image/*" name="image" />
+			<div>
+			<textarea placeholder="Bio" name="user_bio"></textarea>
+			<input type="submit" name="" value="Save" id="submit">
+		</div>
+	</form>
+</div>
+{% endblock %}

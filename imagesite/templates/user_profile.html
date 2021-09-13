@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+	Profile
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/user_profile.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/user_profile.js' %}"></script>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <header>
+  </header>
+  <main>
+      <div class="left">
+        <div class="pic-follow">
+          {% if not request.user.profile_picture %}
+          <img class="photo" src="https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"/>
+          {% else %}
+          <img class="photo" src="/static/images/{{user.profile_picture}}"/>
+          {% endif %}
+          {% if request.user.id != user.id and user.is_authenticated %}
+            {% if check_follow %}
+              <button onclick="follow_user({{user.id}})" id="follow_button">Unfollow</button>
+            {% else %}
+              <button onclick="follow_user({{user.id}})" id="follow_button">Follow</button>
+            {% endif%}
+          {% endif %}
+          <input type="hidden" id="profile_id" value="{{user.id}}" name="">
+        </div>
+      </div>
+      <div class="user-profile-content">
+        <div class="user-details">
+          <h1 class="glow">{{user.first_name}} {{user.last_name}}</h1>
+          <p id="user_role">Role: {{user.user_role}}</p>
+          <p>Email: {{user.email}}</p>
+          <div class="user_info">
+            <p> {{user.user_occupation}}</p>
+            <p>{{user.user_bio}}</p>
+          </div>
+        </div>
+        <div class="user-content">
+          <div class="activity-info">
+            <button>Image posted: {{post_amount}}</button>
+            <button>Followers:<p id="followers">{{user.followers}}</p></button>
+            <button>Following: {{user.following}}</button>
+          </div>
+          <hr>
+          <div class="profile-user-posted" id="profile-user-posted">
+            <div id="main-content">
+
+              {% if post_amount < 1 %}
+              <h2 align=center >This user has not posted any content.</h2>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+  <main>
+</div>
+
+{% endblock %}

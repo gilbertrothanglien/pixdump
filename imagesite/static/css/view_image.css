@@ -1,0 +1,376 @@
+body{
+	background: #031323;
+}
+
+.image-container{
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 20px;
+	color: white;
+	position: absolute;
+	z-index: 5;
+}
+
+.image-container .main-image-container{
+    width: 60vw;
+}
+
+@media(max-width: 768px){
+	.image-container{
+        width: 90vw;
+		padding: 0 0;
+		display: block;
+	}
+    .image-container .main-image-container{
+		display: block;
+        width: 100%;
+    }
+    
+}
+
+.image-container .main-image-container .main-image{
+	max-width: 60vw;
+	max-height: 500px;
+	object-fit: cover;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+@media(max-width: 768px){
+    .image-container .main-image-container{
+        width: 90vw;
+        margin: 0;
+        padding: 0;
+    }
+	.image-container .main-image-container .main-image{
+        max-width: 70vw;
+        max-height: 500px;
+        margin: 0;
+        margin-left: 10px;
+        padding: 0;
+		width: 100vw;
+		height: initial;
+        margin: 40px 0;
+	}
+}
+.image-container .float-right{
+	width: 300px;
+	margin: 0 50px;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 20px 0;
+	backdrop-filter: blur(5px);
+	border-radius: 25px;
+}
+@media(max-width: 768px){
+	.image-container .float-right{
+		margin: 0 0;
+		width: 75vw;
+		margin-left: 10px;
+	}
+}
+.image-container .float-right .user-details a{
+	color: black;
+	text-decoration: none;
+}
+.image-container .float-right .user-details img{
+	height: 43px;
+	width: 43px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.image-buttons{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 5px;
+}
+
+#download-image{
+	text-decoration: none;
+	color: white;
+	border: 1px solid #89eb34;
+	padding: 5px 10px;
+	border-radius: 25px;
+	z-index: 5;
+}
+#download-image:hover{
+	background: #89eb34;
+	color: black;
+}
+.image-buttons #like_no{
+	padding-left: 3px;
+	padding-right: 5px;
+}
+.image-buttons #like{
+	font-size: 30px;
+	padding-left: 20px;
+}
+.red{
+	color: #f54242;
+}
+#like:hover{
+	cursor: pointer;
+}
+.area{
+    background: #031323;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height:100vh;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+@keyframes showcomment{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#myBtn{
+    width: 60%;
+    background-color: transparent;
+    border: 1px solid #3849e8;
+    border-radius: 4px;
+    padding: 3px 0;
+    color: #fff;
+}
+
+#myBtn:hover{
+    cursor: pointer;
+    background-color: #3849e8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1234;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    animation-play-state: running;
+    animation-duration: 0.5s;
+  }
+  
+.modal-content {
+    background-color: #031323;
+    margin: 7% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    height: 450px;
+    width: 80%;
+    top: 10%;
+}
+
+.modal-content p{
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.posted-comments{
+    height: 150px;
+    overflow: auto;
+}
+
+.add-comment form{
+    display: block;
+}
+
+.add-comment form input{
+    display: block;
+
+}
+
+#new-comment{
+    height: 80px;
+    width: 95%;
+    padding: 5px 10px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+#post-comment{
+    margin-top: 10px;
+    margin-left: 90%;
+    padding: 3px 7px;
+    color: #fff;
+    border: 1px solid #6138e8;
+    background-color: #6138e8;
+    border-radius: 3px;
+}
+
+#post-comment:hover{
+    cursor: pointer;
+    background-color: #382280;
+}
+
+.posted-comments{
+    color: #fff;
+    width: 95%;
+    height: 250px;
+    margin: 10px 0;
+    background-color: #00254b;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.comment-container{
+    color: #fff;
+    background-color: rgba(5, 24, 43, 0.4);
+    padding: 2px, 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.comment-container > * {
+    padding: 0 5px;
+}
+
+.comment-container .user-details a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 500;
+}
+
+.comment-container .user-details .comment-time{
+    font-size: 10px;
+}

@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="{% static 'images/logo-black.png' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>
+       {% block title %}
+       {% endblock %}
+     </title>
+     {% block head %}
+     {% endblock %}
+   </head>
+<body>
+  <div class="sidebar close">
+    <a href="{% url 'index' %}">
+      <div class="logo-details">
+          <img src="{% static 'images/logo.png' %}">
+          <span class="logo_name">PixDump</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      {% if user.is_authenticated %}
+      <li>
+        <a href="/user_profile/{{request.user.id}}">
+          <i class='bx bx-user'></i>
+          <span class="link_name">My Profile</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/user_profile/{{request.user.id}}">My Profile</a></li>
+        </ul>
+      </li>
+      {% endif %}
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Category</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#main-content">Category</a></li>
+          <li><a href="/category/Nature">Nature</a></li>
+          <li><a href="/category/Food">Food</a></li>
+          <li><a href="/category/Abstract">Abstract</a></li>
+          <li><a href="/category/Cars">Cars</a></li>
+          <li><a href="/category/Electronics">Electronics</a></li>
+          <li><a href="/category/Fashion">Fashion</a></li>
+          <li><a href="/category/Buildings">Buildings</a></li>
+          <li><a href="/category/Others">Others</a></li>
+        </ul>
+      </li>
+      <li>
+          <a href="/following">
+            <i class='bx bx-user-pin'></i>
+            <span class="link_name">Following</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/following">Following</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{% url 'upload_images' %}"> 
+          <i class='bx bx-upload' ></i>
+          <span class="link_name">Upload</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{% url 'upload_images' %}">Upload</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{% url 'edit_profile' %}">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Profile Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="{% url 'edit_profile' %}">Profile Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      {% if user.is_authenticated %}
+        <div class="profile-content">
+          {% if not request.user.profile_picture %}
+          <img src="https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg">
+          {% else %}
+          <img src="/static/images/{{request.user.profile_picture}}" alt="profileImg">
+          {% endif %}
+        </div>
+        <div class="name-job">
+          <div class="profile_name" id="username">{{request.user.username}}</div>
+          <div class="job" id="role">{{request.user.user_role}}</div>
+          <input type="hidden" name="" value="{{request.user.id}}" id="user_id">
+        </div>
+        <a href="{% url 'logout' %}"><i class='bx bx-log-out'></i></a>
+      {% else %}
+        <a href="{% url 'login' %}" class="login-button">Login</a>
+      {% endif %}
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section" id="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' style="color: #fff;" ></i>
+      <span class="text">{{request.user.first_name}}</span>
+    </div>
+    {% block body %}
+    {% endblock %}
+  </section> 
+ <script src="{% static 'js/layout.js' %}"></script>
+</body>
+</html>
