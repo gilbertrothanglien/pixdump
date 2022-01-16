@@ -2,7 +2,7 @@
 
 ### This is my final project for cs50w. This project is distinct from other projects we did on the course as it is an image hosting site.
 
-### This project satisfies the requirements as it is distinct from others and uses java script and Django. In this project, image can be uploaded either as public or private image and is mobile responsive. When uploading image on private it will not show up on the home page, category page and profile page. Only people with the link will be able to view the image. Other users will be able to view, like and download images. Users who are signed in will be able to follow other users so that the public post made by the followed user will be visible on the following page of the user. Users who are signed in will be able to edit their profile page by uploading profile picture, First name, last name, occupation and bio.
+### This project satisfies the requirements as it is distinct from others and uses java script and Django. In this project, image can be uploaded both as public or private image and is mobile responsive. When uploading image on private it will not show up on the home page, category page and profile page. Only people with the link will be able to view the image. Other users will be able to view, like and download images. Users who are signed in will be able to follow other users so that the public post made by the followed user will be visible on the following page of the user. Users who are signed in will be able to edit their profile page by uploading profile picture, First name, last name, occupation and bio.
 
 
 ## What’s contained in each file
